@@ -5,14 +5,14 @@
 # Sets the minimum CMake version required for this project.
 cmake_minimum_required(VERSION 3.22.1)
 
-include_directories(D:/DxLib_Android/Lib_AndroidStudio/${ANDROID_ABI} )
-link_directories(D:/DxLib_Android/Lib_AndroidStudio/${ANDROID_ABI} )
+include_directories(C:/ProgramData/DxLib_Android/Lib_AndroidStudio/${ANDROID_ABI} )
+link_directories(C:/ProgramData/DxLib_Android/Lib_AndroidStudio/${ANDROID_ABI} )
 
 # Declares the project name. The project name can be accessed via ${ PROJECT_NAME},
 # Since this is the top level CMakeLists.txt, the project name is also accessible
 # with ${CMAKE_PROJECT_NAME} (both CMake variables are in-sync within the top level
 # build script scope).
-project("mydxlib")
+project("AndroidDxLib_Shotting_Game")
 find_library(log-lib log)
 
 # Creates and names a library, sets it as either STATIC
