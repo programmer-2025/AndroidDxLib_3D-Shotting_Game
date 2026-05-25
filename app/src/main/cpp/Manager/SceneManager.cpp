@@ -6,6 +6,9 @@
 #include "SceneManager.h"
 #include "../Scene/BaseScene.h"
 #include "../Scene/BootScene.h"
+#include "../Scene/TitleScene.h"
+#include "../Scene/ClearScene.h"
+#include "../Scene/PlayScene.h"
 
 namespace {
     std::vector<BaseScene*> sceneVector_;
@@ -18,6 +21,9 @@ namespace SceneManager {
         sceneVector_.clear();
 
         sceneVector_.push_back(new BootScene());
+        sceneVector_.push_back(new TitleScene());
+        sceneVector_.push_back(new PlayScene());
+        sceneVector_.push_back(new ClearScene());
 
         ChangeScene("BootScene");
     }
