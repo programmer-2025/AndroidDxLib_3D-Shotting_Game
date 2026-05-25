@@ -36,10 +36,9 @@ add_library( # Sets the name of the library.
 
         # Provides a relative path to your source file(s).
         native-lib.cpp
-        Library/Location2D.cpp
-        Library/Vector2D.cpp
         Manager/ObjectManager.cpp
         Manager/SceneManager.cpp
+        Object/Enemy.cpp
         Scene/BootScene.cpp
         Debug/ImGUI/imgui.cpp
         Debug/ImGUI/imgui_draw.cpp

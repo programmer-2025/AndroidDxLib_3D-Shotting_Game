@@ -59,7 +59,7 @@ namespace {
 /// </summary>
 namespace DxLibParams {
     static const int FONT_TYPE = DX_FONTTYPE_ANTIALIASING_EDGE;
-    static const int BACKGROUND_COLOR[3] = {0, 0, 0};
+    static const int BACKGROUND_COLOR[3] = {255, 255, 255};
     static const float FONT_SCALE = 1.0f;
 
     inline void ChangeFontSize(float scale) {

@@ -26,6 +26,7 @@ namespace SceneManager {
         for (auto& scene : sceneVector_) {
             if (scene->GetName() == sceneName) {
                 currentScene_ = scene;
+                currentScene_->Init();
                 break;
             }
         }
