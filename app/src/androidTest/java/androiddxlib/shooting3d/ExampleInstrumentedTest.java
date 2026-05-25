@@ -1,4 +1,4 @@
-package android.mydxlib;
+package androiddxlib.shooting3d;
 
 import android.content.Context;
 
