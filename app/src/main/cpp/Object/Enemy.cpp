@@ -5,8 +5,8 @@
 #include "Enemy.h"
 #include "../Debug/ImGUI/imgui.h"
 
-Enemy::Enemy(Location2D loc, Vector2D vec)
-    : Base2DObject("Enemy", loc, vec, true){
+Enemy::Enemy(Location3D loc, Vector3D vec)
+    : Base3DObject("Enemy", loc, vec, true){
     hModel_ = -1;
 }
 
@@ -21,14 +21,15 @@ void Enemy::Update() {
 
     //デバック用
     ImGui::Begin("Enemy");
-    ImGui::SliderFloat("X:", &location_.x_, -1000.0f, 1000.0f);
-    ImGui::SliderFloat("Y:", &location_.y_, -1000.0f, 1000.0f);
+    ImGui::SliderFloat("X:", &location_.x_, -1000.0f, 5000.0f);
+    ImGui::SliderFloat("Y:", &location_.y_, -1000.0f, 5000.0f);
+    ImGui::SliderFloat("Z:", &location_.z_, -1000.0f, 5000.0f);
     ImGui::End();
 }
 
 void Enemy::Draw() {
     if (hModel_ == -1) return;
-    MV1SetPosition(hModel_, {location_.x_, location_.y_, 10});
+    MV1SetPosition(hModel_, {location_.x_, location_.y_, location_.z_});
     MV1DrawModel(hModel_);
 }
 

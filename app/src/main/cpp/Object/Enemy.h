@@ -5,13 +5,13 @@
 #ifndef MYDXLIB_ANDROID_ENEMY_H
 #define MYDXLIB_ANDROID_ENEMY_H
 
-#include "Base2DObject.h"
+#include "Base3DObject.h"
 
-class Enemy : public Base2DObject {
+class Enemy : public Base3DObject {
 private:
     int hModel_;
 public:
-    Enemy(Location2D loc, Vector2D vec);
+    Enemy(Location3D loc, Vector3D vec);
     ~Enemy() override;
     void Update() override;
     void Draw() override;

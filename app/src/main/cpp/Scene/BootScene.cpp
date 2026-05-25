@@ -14,7 +14,7 @@ namespace {
 
 void BootScene::Init() {
     sceneCounter_ = 0;
-    enemy = new Enemy(Location2D{0, 0}, Vector2D{0, 0});
+    enemy = new Enemy(Location3D{0, 0, 0}, Vector3D{0, 0, 0});
 }
 
 void BootScene::Update() {
