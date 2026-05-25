@@ -6,12 +6,25 @@
 #include "BootScene.h"
 #include "../Debug/ImGUI/imgui.h"
 #include "../MyDxlib.h"
+#include "../Object/Enemy.h"
+
+namespace {
+    Enemy* enemy = nullptr;
+}
+
+void BootScene::Init() {
+    sceneCounter_ = 0;
+    enemy = new Enemy(Location2D{0, 0}, Vector2D{0, 0});
+    enemy->Init();
+}
 
 void BootScene::Update() {
     sceneCounter_++;
+    enemy->Update();
 }
 
 void BootScene::Draw() {
+    enemy->Draw();
     DrawString(0, 0, "Drawing BootScene", GetColor(255, 255, 255));
     DrawFormatString(0, 100, GetColor(255, 255, 255), "Counter: %d", sceneCounter_);
 
@@ -30,10 +43,6 @@ void BootScene::Draw() {
     }
     ImGui::End();
 #endif
-}
-
-void BootScene::Init() {
-    sceneCounter_ = 0;
 }
 
 void BootScene::Release() {
