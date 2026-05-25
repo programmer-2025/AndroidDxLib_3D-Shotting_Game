@@ -5,6 +5,7 @@
 #ifndef MYDXLIB_ANDROID_BASEOBJECT_H
 #define MYDXLIB_ANDROID_BASEOBJECT_H
 
+#pragma once
 #include <string>
 
 class BaseObject {
@@ -18,10 +19,7 @@ public:
     virtual void Draw() = 0;
     virtual void Release() = 0;
 
-    BaseObject(const std::string& name, const bool isAlive) {
-        name_ = name;
-        isAlive_ = isAlive;
-    };
+    BaseObject(const std::string& name, const bool isAlive);
     virtual ~BaseObject() = default;
 
     std::string GetName() const { return name_; };

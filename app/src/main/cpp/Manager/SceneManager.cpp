@@ -9,6 +9,7 @@
 #include "../Scene/TitleScene.h"
 #include "../Scene/ClearScene.h"
 #include "../Scene/PlayScene.h"
+#include "ObjectManager.h"
 
 namespace {
     std::vector<BaseScene*> sceneVector_;
@@ -32,7 +33,9 @@ namespace SceneManager {
         for (auto& scene : sceneVector_) {
             if (scene->GetName() == sceneName) {
                 currentScene_ = scene;
+                ObjectManager::ClearObjects();
                 currentScene_->Init();
+                ObjectManager::InitManager();
                 break;
             }
         }

@@ -2,6 +2,7 @@
 // Created by user on 2026/03/12.
 //
 
+#pragma once
 #ifndef MYDXLIB_ANDROID_OBJECTMANAGER_H
 #define MYDXLIB_ANDROID_OBJECTMANAGER_H
 
@@ -14,8 +15,12 @@ namespace ObjectManager {
     void AddObject(BaseObject* object);
     void RemoveObject(BaseObject* object);
     std::vector<BaseObject*>& GetAllObjects();
+    void ClearObjects();
 
-    template<class C> C* GetDrawObject() {
+    void UpdateAllObjects();
+    void DrawAllObjects();
+
+     template<class C> C* GetDrawObject() {
         for (BaseObject* obj : GetAllObjects()) {
             if (obj == nullptr) continue;
             C* instance = dynamic_cast<C*>(obj);

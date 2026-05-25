@@ -43,7 +43,9 @@ int android_main() {
         auto& io = ImGui::GetIO();
 
         SceneManager::UpdateCurrentScene();
+        ObjectManager::UpdateAllObjects();
         SceneManager::DrawCurrentScene();
+        ObjectManager::DrawAllObjects();
 
         ImGui::Render();
         ImDrawData* draw_data = ImGui::GetDrawData();

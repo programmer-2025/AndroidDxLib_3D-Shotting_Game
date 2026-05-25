@@ -39,7 +39,11 @@ add_library( # Sets the name of the library.
         Manager/ObjectManager.cpp
         Manager/SceneManager.cpp
         Object/Enemy.cpp
+        Object/BaseObject.cpp
         Scene/BootScene.cpp
+        Scene/TitleScene.cpp
+        Scene/PlayScene.cpp
+        Scene/ClearScene.cpp
         Debug/ImGUI/imgui.cpp
         Debug/ImGUI/imgui_draw.cpp
         Debug/ImGUI/imgui_demo.cpp

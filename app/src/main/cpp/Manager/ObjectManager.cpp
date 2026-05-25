@@ -12,7 +12,9 @@ namespace {
 namespace ObjectManager {
 
     void InitManager() {
-        allObjects.clear();
+        for (BaseObject* baseObject : allObjects) {
+            baseObject->Init();
+        }
     }
 
     void AddObject(BaseObject* object){
@@ -34,6 +36,24 @@ namespace ObjectManager {
 
     std::vector<BaseObject*>& GetAllObjects() {
         return allObjects;
+    }
+
+    void ClearObjects() {
+        allObjects.clear();
+    }
+
+    void UpdateAllObjects() {
+        for (BaseObject* obj : allObjects) {
+            if (obj == nullptr) continue;
+            obj->Update();
+        }
+    }
+
+    void DrawAllObjects() {
+        for (BaseObject* obj : allObjects) {
+            if (obj == nullptr) continue;
+            obj->Draw();
+        }
     }
 
 }
