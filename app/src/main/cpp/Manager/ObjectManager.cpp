@@ -43,14 +43,16 @@ namespace ObjectManager {
     }
 
     void UpdateAllObjects() {
-        for (BaseObject* obj : allObjects) {
+        for (int i = 0; i < allObjects.size(); i++) {
+            auto obj = allObjects[i];
             if (obj == nullptr) continue;
             obj->Update();
         }
     }
 
     void DrawAllObjects() {
-        for (BaseObject* obj : allObjects) {
+        for (int i = 0; i < allObjects.size(); i++) {
+            auto obj = allObjects[i];
             if (obj == nullptr) continue;
             obj->Draw();
         }
