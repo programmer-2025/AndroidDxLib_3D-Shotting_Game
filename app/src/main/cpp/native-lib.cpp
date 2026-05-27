@@ -99,9 +99,8 @@ int initApp() {
     SetUseZBuffer3D(TRUE);
     SetWriteZBuffer3D(TRUE);
 
-    int width = 1280, height = 720;
-    DxLib::GetAndroidDisplayResolution(&width, &height); //android用の解像度取得関数
-    SetGraphMode(width, height, 32);
+    DxLib::GetAndroidDisplayResolution(&DxLibParams::WIDTH, &DxLibParams::HEIGHT); //android用の解像度取得関数
+    SetGraphMode(DxLibParams::WIDTH, DxLibParams::HEIGHT, 32);
     DxLibParams::ChangeFontSize(3.0);
 
     // MyDxlibの初期化

@@ -58,6 +58,8 @@ namespace {
 /// デフォルトのDxLibの設定。
 /// </summary>
 namespace DxLibParams {
+    inline int WIDTH = -1; //androidの場合は、関数で取得するため動的
+    inline int HEIGHT = -1;  //androidの場合は、関数で取得するため動的
     static const int FONT_TYPE = DX_FONTTYPE_ANTIALIASING_EDGE;
     static const int BACKGROUND_COLOR[3] = {255, 255, 255};
     static const float FONT_SCALE = 1.0f;

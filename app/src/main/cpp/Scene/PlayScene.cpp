@@ -3,9 +3,13 @@
 //
 
 #include "PlayScene.h"
+#include "../Object/Enemy.h"
+
+namespace {
+}
 
 void PlayScene::Init() {
-
+    new Enemy(Location3D{0, 0, 0}, Vector3D{0, 0, 0});
 }
 
 void PlayScene::Update() {

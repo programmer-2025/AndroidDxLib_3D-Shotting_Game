@@ -7,18 +7,18 @@
 #include "../Debug/ImGUI/imgui.h"
 #include "../MyDxlib.h"
 #include "../Object/Enemy.h"
+#include "../Manager/SceneManager.h"
 
 namespace {
-    Enemy* enemy = nullptr;
 }
 
 void BootScene::Init() {
     sceneCounter_ = 0;
-    enemy = new Enemy(Location3D{0, 0, 0}, Vector3D{0, 0, 0});
 }
 
 void BootScene::Update() {
     sceneCounter_++;
+    SceneManager::ChangeScene("TitleScene");
 }
 
 void BootScene::Draw() {
