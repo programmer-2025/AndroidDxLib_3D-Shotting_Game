@@ -39,6 +39,8 @@ add_library( # Sets the name of the library.
         Manager/ObjectManager.cpp
         Manager/SceneManager.cpp
         Object/Enemy.cpp
+        Object/Player.cpp
+        Object/Bullet.cpp
         Object/BaseObject.cpp
         Scene/BootScene.cpp
         Scene/TitleScene.cpp
