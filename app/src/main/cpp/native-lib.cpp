@@ -132,5 +132,6 @@ void exitApp() {
 }
 
 int32_t AndroidInputCallback( AInputEvent *InputEvent, void *Data ) {
-    return ImGui_ImplAndroid_HandleInputEvent( InputEvent );
+    ImGui_ImplAndroid_HandleInputEvent(InputEvent);
+    return 0;
 }
