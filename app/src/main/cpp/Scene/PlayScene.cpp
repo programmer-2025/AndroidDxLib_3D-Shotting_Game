@@ -4,8 +4,10 @@
 
 #include <DxLib.h>
 #include "PlayScene.h"
+#include "../Manager/ObjectManager.h"
 #include "../Object/Enemy.h"
 #include "../Object/Player.h"
+#include "../Manager/SceneManager.h"
 
 namespace {
     Player* player = nullptr;
@@ -18,11 +20,13 @@ void PlayScene::Init() {
 }
 
 void PlayScene::Update() {
-
+    auto enemyList = ObjectManager::GetDrawObjectList<Enemy>();
+    if (enemyList.empty()) {
+        SceneManager::ChangeScene("ClearScene");
+    }
 }
 
 void PlayScene::Draw() {
-
 }
 
 void PlayScene::Release() {
