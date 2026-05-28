@@ -10,6 +10,7 @@
 class Enemy : public Base3DObject {
 private:
     int hModel_;
+    float time_;
 public:
     Enemy(Location3D loc, Vector3D vec);
     ~Enemy() override;
