@@ -23,12 +23,26 @@ namespace ObjectManager {
      template<class C> C* GetDrawObject() {
         for (BaseObject* obj : GetAllObjects()) {
             if (obj == nullptr) continue;
+            if (!obj->IsAlive()) continue;
             C* instance = dynamic_cast<C*>(obj);
             if (instance != nullptr) {
                 return instance;
             }
         }
         return nullptr;
+    }
+
+    template<class C> std::vector<C*> GetDrawObjectList() {
+        std::vector<C*> result;
+        for (BaseObject* obj : GetAllObjects()) {
+            if (obj == nullptr) continue;
+            if (!obj->IsAlive()) continue;
+            C* instance = dynamic_cast<C*>(obj);
+            if (instance != nullptr) {
+                result.push_back(instance);
+            }
+        }
+        return result;
     }
 }
 
