@@ -13,6 +13,7 @@ private:
 protected:
     std::string name_;
     bool isAlive_;
+    bool isShowing_;
 public:
     virtual void Init() = 0;
     virtual void Update() = 0;
@@ -24,6 +25,9 @@ public:
 
     std::string GetName() const { return name_; };
     bool IsAlive() const { return isAlive_; };
+    void DeadMe() { isAlive_ = false; }
+    bool IsShowing() const {return isShowing_;}
+    void SetShowing(bool flag) { isShowing_ = flag; };
 };
 
 #endif //MYDXLIB_ANDROID_BASEOBJECT_H

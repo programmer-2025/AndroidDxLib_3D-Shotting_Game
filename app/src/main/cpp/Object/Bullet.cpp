@@ -27,12 +27,11 @@ void Bullet::Update() {
     MV1SetPosition(hModel_, {location_.x_, location_.y_, location_.z_});
     lifeTime_ -= DELTA_TIME;
     if (lifeTime_ <= 0.0f) {
-        isAlive_ = false;
+        DeadMe();
     }
 }
 
 void Bullet::Draw() {
-    if (!isAlive_) return;
     MV1SetPosition(hModel_, {location_.x_, location_.y_, location_.z_});
     MV1DrawModel(hModel_);
 }

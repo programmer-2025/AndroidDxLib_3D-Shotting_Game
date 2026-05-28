@@ -21,7 +21,7 @@ namespace ObjectManager {
         allObjects.push_back(object);
     }
 
-    void RemoveObject(const BaseObject* object){
+    void RemoveObject(BaseObject* object){
         std::vector<BaseObject*>& all = GetAllObjects();
         for (auto it = all.begin(); it != all.end(); ) {
             if ((*it) == object) {
@@ -46,7 +46,12 @@ namespace ObjectManager {
         for (int i = 0; i < allObjects.size(); i++) {
             auto obj = allObjects[i];
             if (obj == nullptr) continue;
-            obj->Update();
+            if (!obj->IsAlive()) {
+                RemoveObject(obj);
+            }
+            else {
+                obj->Update();
+            }
         }
     }
 

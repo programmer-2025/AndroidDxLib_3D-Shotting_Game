@@ -43,7 +43,7 @@ void Enemy::Update() {
     for (Bullet* bullet : bullets) {
         float distance = location_.Distance(bullet->GetLocation());
         if (distance < 100) {
-            isAlive_ = false;
+            DeadMe();
         }
     }
 
@@ -56,7 +56,6 @@ void Enemy::Update() {
 }
 
 void Enemy::Draw() {
-    if (!isAlive_) return;
     if (hModel_ == -1) return;
     MV1SetPosition(hModel_, {location_.x_, location_.y_, location_.z_});
     MV1DrawModel(hModel_);
