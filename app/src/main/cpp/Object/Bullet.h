@@ -11,7 +11,7 @@
 #include "../Library/Vector3D.h"
 
 namespace {
-    inline const float MAX_LIFE_TIME = 10.0f;
+    inline const float MAX_LIFE_TIME = 60.0f;
 }
 
 class Bullet : public Base3DObject {
