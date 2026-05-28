@@ -1,7 +1,13 @@
 # 概要
 * Androidで動く、3Dシューティングゲームです（未完成）。
 
-# 使用ライブラリ
+# クレジット
+## BGM・効果音
+
+## 使用ソフト
+* プログラミング：VisualStudio
+* CG：Blender
+## 使用ライブラリ
 * DxLibのAndroid版
 * MyDxLib（※自作ライブラリ、https://github.com/programmer-2025/MyDxLib_Android ）
 
